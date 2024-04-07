@@ -11,7 +11,7 @@ const config = {
 	password: `${process.env.TYPEORM_MYSQL_PASSWORD}`,
 	database: `${process.env.TYPEORM_MYSQL_DB}`,
 	entities: ['dist/**/*.entity{.ts,.js}'],
-	migrations: ['dist/database/migrations/*{.ts,.js}'],
+	migrations: ['dist/src/database/migrations/*{.ts,.js}'],
 	autoLoadEntities: false,
 	synchronize: false,
 };
