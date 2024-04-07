@@ -3,7 +3,7 @@ import { Exclude } from 'class-transformer';
 import { IsString, Matches, MinLength } from 'class-validator';
 import { Role } from 'src/modules/roles/entities/role.entity';
 import { BaseEntity } from 'src/modules/shared/base/base.entity';
-import { Entity, Column, ManyToOne, OneToMany } from 'typeorm';
+import { Entity, Column, ManyToOne } from 'typeorm';
 
 @Entity()
 export class User extends BaseEntity {
