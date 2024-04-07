@@ -1,5 +1,7 @@
 # Nestjs Boilerplate
 
+This boilerplate provides a robust foundation for building scalable and feature-rich NestJS applications with the following functionalities:
+
 ## **Core Features:**
 
 - **Authentication & Authorization:** Secure your API endpoints using industry-standard JSON Web Tokens (JWT) for authentication and Context-Aware Security Level (CASL) for authorization.
