@@ -3,7 +3,6 @@ import { Exclude } from 'class-transformer';
 import { IsString, Matches, MinLength } from 'class-validator';
 import { Role } from 'src/modules/roles/entities/role.entity';
 import { BaseEntity } from 'src/modules/shared/base/base.entity';
-import { Story } from 'src/modules/stories/entities/story.entity';
 import { Entity, Column, ManyToOne, OneToMany } from 'typeorm';
 
 @Entity()
@@ -29,9 +28,6 @@ export class User extends BaseEntity {
 
 	@ManyToOne(() => Role, (role) => role.users)
 	role: Role;
-
-	@OneToMany(() => Story, (st) => st.createdUser)
-	stories: Story[];
 
 	constructor(partial: Partial<User>) {
 		super();

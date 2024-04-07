@@ -16,7 +16,6 @@ import { JwtAuthGuard } from './modules/auth/jwt-auth.guard';
 import { CaslModule } from './modules/casl/casl.module';
 import { PermissionsModule } from './modules/permissions/permissions.module';
 import { RolesModule } from './modules/roles/roles.module';
-import { StoriesModule } from './modules/stories/stories.module';
 import { UsersModule } from './modules/users/users.module';
 import { GlobalExceptionFilter } from './exception-filters/global-exception.filter';
 import { SearchModule } from './modules/search/search.module';
@@ -55,7 +54,6 @@ import * as Joi from 'joi';
 		AuthModule,
 		RolesModule,
 		PermissionsModule,
-		StoriesModule,
 		CaslModule,
 		UtilsModule,
 		SearchModule,
