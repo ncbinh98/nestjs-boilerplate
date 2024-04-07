@@ -88,7 +88,7 @@ INSERT INTO `role` (`id`, `name`, `createdAt`, `updatedAt`, `deletedAt`, `inheri
 
 
 INSERT INTO `user` (`id`, `username`, `password`, `age`, `roleId`, `name`, `createdAt`, `updatedAt`, `deletedAt`) VALUES
-('fa203c3f-ad92-58a5-93b2-0b5e49a0fe4b', 'admin01', '$2b$10$dXcxOz1cyqku.jey5FjMUOvSFU6Ck4QJ76L8se8ecFBRex1z5eU.C', NULL, '6d9b2e04-03e6-5359-912b-7d99e89678bb', NULL, '2024-03-12 07:22:11.807807', '2024-03-12 07:22:11.975713', NULL);
+('fa203c3f-ad92-58a5-93b2-0b5e49a0fe4b', 'admin', '$2b$10$dXcxOz1cyqku.jey5FjMUOvSFU6Ck4QJ76L8se8ecFBRex1z5eU.C', NULL, '6d9b2e04-03e6-5359-912b-7d99e89678bb', NULL, '2024-03-12 07:22:11.807807', '2024-03-12 07:22:11.975713', NULL);
 
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;

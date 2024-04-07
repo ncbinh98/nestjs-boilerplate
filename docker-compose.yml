@@ -2,12 +2,12 @@
 version: '3.1'
 
 services:
-  rbac-api-dev:
+  api-dev:
     build:
       context: .
       target: develop
     command: npm run start:dev
-    container_name: rbac-api-dev
+    container_name: api-dev
     environment:
       - NODE_ENV=develop
     ports:
@@ -24,11 +24,11 @@ services:
       - elasticsearch
       - kibana
 
-  rbac-api-prod:
+  api-prod:
     build:
       context: .
       target: production
-    container_name: rbac-api-prod
+    container_name: api-prod
     environment:
       - NODE_ENV=production
     ports:
