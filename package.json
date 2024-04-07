@@ -1,8 +1,8 @@
 {
   "name": "NestJS Boilerplate",
   "version": "0.0.1",
-  "description": "",
-  "author": "",
+  "description": "This boilerplate provides a robust foundation for building scalable and feature-rich NestJS applications",
+  "author": "Binh",
   "private": true,
   "license": "UNLICENSED",
   "scripts": {

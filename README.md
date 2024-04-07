@@ -1,122 +1,63 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
-</p>
+# Nestjs Boilerplate
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+## **Core Features:**
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+- **Authentication & Authorization:** Secure your API endpoints using industry-standard JSON Web Tokens (JWT) for authentication and Context-Aware Security Level (CASL) for authorization.
+- **Database Integration:** Utilize MySQL with TypeORM for efficient database interactions. Benefit from TypeORM's features like migrations for schema management.
+- **Redis Caching:** Enhance application performance and reduce database load by leveraging Redis with `@nestjs/cache-manager`.
+- **Elasticsearch Integration:** Streamline full-text search and data analysis capabilities by integrating Elasticsearch.
+- **Environment Variable Validation:** Employ Joi for robust validation of environment variables, ensuring proper configuration for your application.
+- **OpenAPI Documentation (Swagger):** Generate comprehensive API documentation using Swagger to facilitate developer interaction and understanding.
+- **Dockerized Deployment:** Package your application in a Docker container, enabling easy deployment and scalability across environments.
+- **Development Workflow:**
+  - **Husky:** Enforce code linting and formatting with Husky, streamlining development processes.
+  - **ESLint:** Maintain code quality and consistency using ESLint.
+  - **Prettier:** Automatically format your code to adhere to defined style preferences.
+  - **Commitlint:** Uphold a commit message style guide with Commitlint.
+- **Error Handling:** Implement a centralized error handling mechanism for a consistent and informative user experience.
 
-## Description
+## Installation **(Direct Execution):**
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
-
-## Installation
+**Create `.env` file:**
 
 ```bash
-$ npm install
+cp .env-example .env
 ```
-
-## Running the app
 
 ```bash
-# development
-$ npm run start
-
-# watch mode
-$ npm run start:dev
-
-# production mode
-$ npm run start:prod
+npm run docker:dev
 ```
 
-## Test
+You can stop `api-dev` container then run cmd below
 
 ```bash
-# unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
+npm ci -f
 ```
 
-## Migartions
+```bash
+npm run migrate:run
+```
 
-"migration:run": Run migration from migration folder database/migrations
+```bash
+npm run start:dev
+```
 
-"migration:generate": Generate migration files changes in entity database
+## Installation - docker
 
-"migration:create": Create empty migration file
+- Run project inside docker container (with hot reload)
+- You may need create database for it
+- You may need import database `init.sql` in `src/database/migrations/init.sql`
 
-"migration:revert": Revert the changes
+```bash
+npm run docker:dev
+```
 
-## Debug MetaData Notfound Typeorm 0.3.2
+## Contact
 
-https://medium.com/@JorgeSantanaDeveloper/troubleshooting-the-no-metadata-was-found-error-in-typeorm-2fab1003b099
+If you have any questions or require assistance with this boilerplate, feel free to reach out to me:
 
-https://stackoverflow.com/questions/72535879/getconnection-getrepository-typeorm-is-deprecated <- remember init datasource
+- Email: ncbinh01@gmail.com
 
-## Documents
+## Give it a Star! ⭐
 
-### CASL
-
-- CASL: https://mfi.engineering/extensible-and-secure-authorization-with-nestjs-and-casl-c6f6d1ceefd5
-
-- Suport inheritance role: https://stackoverflow.com/questions/20215744/how-to-create-a-mysql-hierarchical-recursive-query
-
-- Support retricting fields
-
-- RBAC: https://medium.com/yavar/casl-roles-with-persisted-permissions-in-nestjs-152129f4a6fb
-
-### Caching
-
-- Setup redis in nestjs https://medium.com/@mut1aq/using-redis-in-nestjs-8ca1a009670f (using package cache-manager-redis-yet instead, bc ttl issues)
-
-- Setup redis docker: https://geshan.com.np/blog/2022/01/redis-docker/
-
-- Remove cache by key pattern: https://tech.oyorooms.com/finding-and-deleting-the-redis-keys-by-pattern-the-right-way-123629d7730
-
-- Best practise key for redis: `objectType:objectId:field ` : https://www.dragonflydb.io/guides/redis-best-practices
-
-### Setup Migration Typeorm Nestjs
-
-- Ref Implement Migration Typeorm NestJS https://dev.to/amirfakour/using-typeorm-migration-in-nestjs-with-postgres-database-3c75
-
-### Distributed Counter System
-
-- https://systemdesign.one/distributed-counter-system-design/ (count something...)
-
-### Elastic Search
-
-- https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/search_examples.html
-
-- https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-multi-match-query.html
-
-- https://medium.com/@phatdev/build-a-full-text-search-with-nestjs-mongodb-elasticsearch-and-docker-final-part-3ff13b93f447
-
-- https://viblo.asia/p/tich-hop-elasticsearch-va-kibana-vao-docker-compose-Az45bymqlxY
-
-- https://docs.nestjs.com/techniques/database#subscribers (Subscriber Database)
-
-### Dockerizing
-
-- https://viblo.asia/p/dockerizing-lti-nestjs-trong-canvas-lms-voi-su-ho-tro-cua-chatgpt-5OXLAobr4Gr
-- Fix hot reload: https://stackoverflow.com/questions/70446187/nestjs-live-reload-not-working-with-docker
+If you find this project useful, please consider giving it a star on GitHub. This helps others discover it and shows your appreciation.
