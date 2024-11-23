@@ -23,7 +23,7 @@ COPY package*.json ./
 
 RUN npm ci --production --force
 
-COPY . .
+COPY .env ./.env
 
 COPY --from=develop /app/dist ./dist
 
